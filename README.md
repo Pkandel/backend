@@ -30,7 +30,7 @@ You can access your Swagger API documentaion at http://localhost:8080/api-docs
 
 Or you can simply run from docker image from the docker-hub
 ```sh
-$ docker run -d -p 8080:80 pkandel/backend
+$ docker run -d -p 8080:80 pkandel/backend:latest
 ```
 
 2. Using npm
@@ -39,18 +39,18 @@ In development mode
 ```sh
 $ git clone https://githun.com/pkandel/backend
 $ cd backend; npm install
-$ npm run dev
+$ PORT=8080 npm run dev
 `````
-```make sure port 80 is avvaiable if not change npm run dev to PORT=8080 npm run dev```
+```Why PORT=8080: By default we are running it on port 80 and exposing from docker. But we want to access it through port 8080.```
 
 In production mode
 ```sh
 $ git clone https://github.com/pkandel/backend
 $ cd backend; npm install
 $ npm run build
-$ npm run prod
+$ PORT=8080 npm run prod
 ```
-```make sure port 80 is avvaiable if not change npm run prod to PORT=8080 npm run prod```
+
 
 NOTE
 
