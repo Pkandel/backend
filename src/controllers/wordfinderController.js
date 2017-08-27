@@ -1,5 +1,6 @@
 import path from 'path';
 import fs from 'fs';
+
 //find word
 function findword(req, res, next) {
   if (!req.params.word) {
@@ -38,8 +39,12 @@ function findword(req, res, next) {
             flag = true;
           }
           //if all dict words are in comming word flag remains true
+
           if (flag) {
-            results.push(word);
+            //this is necessary for word like says
+            if (!results.includes(word)) {
+              results.push(word);
+            }
           }
         }
       }
